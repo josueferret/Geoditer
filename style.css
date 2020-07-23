@@ -1,0 +1,330 @@
+body {
+    background-color: #1E1E1E;
+    overflow: hidden;
+}
+
+/*CLASES*/
+.bordes_triangulo {
+    stroke: #9CDCFE;
+    stroke-miterlimit: 10;
+    stroke-width: 0.25px;
+    stroke-linecap: round;
+}
+
+.lineas_porcentaje {
+    stroke: #9CDCFE;
+    stroke-miterlimit: 10;
+    stroke-width: 0.2px;
+    stroke-linecap: round;
+    fill: none;
+    opacity: 0;
+    animation: aparecer_opacity_05 0.5s ease-out forwards 1s;
+}
+
+.inputs {
+    position: absolute;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+    width: 8%;
+    height: 2%;
+}
+
+.bordes_triangulo {
+    animation: recorrer 1s ease-out forwards;
+}
+
+.labels {
+    position: absolute;
+    color: white;
+    display: none;
+}
+
+.label_check {
+    top: 10%;
+}
+
+/*>QAP*/
+.poligonos_QAP {
+    display: none;
+    opacity: 0.5;
+}
+
+/*>QAPv*/
+.poligonos_QAPv {
+    display: none;
+    opacity: 0.5;
+}
+
+/*>GABRO_hbl*/
+.poligonos_GABRO_hbl {
+    display: none;
+    opacity: 0.5;
+}
+
+/*>GABRO_olv*/
+.poligonos_GABRO_olv {
+    display: none;
+    opacity: 0.5;
+}
+
+/*>GABRO_px*/
+.poligonos_GABRO_px {
+    display: none;
+    opacity: 0.5;
+}
+
+/*>UM_hbl*/
+.poligonos_UM_hbl {
+    display: none;
+    opacity: 0.5;
+}
+
+/*>UM_px*/
+.poligonos_UM_px {
+    display: none;
+    opacity: 0.5;
+}
+
+/*IDS*/
+#contenedor_svg {
+    position: absolute;
+    width: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7%;
+}
+
+#borde_izquierdo {
+    stroke-dasharray: 111.93756103515625px;
+    stroke-dashoffset: 111.93756103515625px;
+}
+
+#borde_inferior {
+    stroke-dasharray: 100.1199951171875px;
+    stroke-dashoffset: 100.1199951171875px;
+}
+
+#borde_derecho {
+    stroke-dasharray: 111.93756103515625px;
+    stroke-dashoffset: 111.93756103515625px;
+}
+
+#input1 {
+    top: 7%;
+    left: 46%;
+}
+
+#input2 {
+    top: 80%;
+    left: 33%;
+}
+
+#input3 {
+    top: 80%;
+    left: 58%;
+}
+
+#label_input1 {
+    top: 4%;
+    right: 54.5%;
+}
+
+#label_input2 {
+    top: 77%;
+    right: 67.5%;
+}
+
+#label_input3 {
+    top: 77%;
+    right: 42.5%;
+}
+
+#label_nombre_input1 {
+    top: 1%;
+    right: 50%;
+    transform: translateX(+50%);
+}
+
+#label_nombre_input2 {
+    top: 80%;
+    right: 63%;
+    transform: translateX(+50%);
+}
+
+#label_nombre_input3 {
+    top: 80%;
+    right: 37.5%;
+    transform: translateX(+50%);
+}
+
+#label_input1_normalizado {
+    top: 4%;
+    left: 55%;
+}
+
+#label_input2_normalizado {
+    top: 77%;
+    left: 42%;
+}
+
+#label_input3_normalizado {
+    top: 77%;
+    left: 67%;
+}
+
+#punto {
+    fill: #FE0000;
+    display: none;
+}
+
+/*>QAP*/
+#label_check_QAP {
+    color: white;
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
+#label_nombre_QAP {
+    color: honeydew;
+    position: absolute;
+    display: none;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*>QAPv*/
+#label_check_QAPv {
+    color: white;
+    position: absolute;
+    top: 13%;
+    left: 15%;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
+#label_nombre_QAPv {
+    color: honeydew;
+    position: absolute;
+    display: none;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*>GABRO_hbl*/
+#label_check_GABRO_hbl {
+    color: white;
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
+#label_nombre_GABRO_hbl {
+    color: honeydew;
+    position: absolute;
+    display: none;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*>GABRO_olv*/
+#label_check_GABRO_olv {
+    color: white;
+    position: absolute;
+    top: 23%;
+    left: 15%;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
+#label_nombre_GABRO_olv {
+    color: honeydew;
+    position: absolute;
+    display: none;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*>GABRO_px*/
+#label_check_GABRO_px {
+    color: white;
+    position: absolute;
+    top: 28%;
+    left: 15%;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
+#label_nombre_GABRO_px {
+    color: honeydew;
+    position: absolute;
+    display: none;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*>UM_hbl*/
+#label_check_UM_hbl {
+    color: white;
+    position: absolute;
+    top: 33%;
+    left: 15%;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
+#label_nombre_UM_hbl {
+    color: honeydew;
+    position: absolute;
+    display: none;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*>UM_px*/
+#label_check_UM_px {
+    color: white;
+    position: absolute;
+    top: 38%;
+    left: 15%;
+    opacity: 0;
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
+#label_nombre_UM_px {
+    color: honeydew;
+    position: absolute;
+    display: none;
+    top: 84%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*KEYFRAMES AL CARGAR PAGINA*/
+@keyframes recorrer {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes aparecer_opacity_05 {
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes aparecer_opacity_1 {
+    to {
+        opacity: 1;
+    }
+}
