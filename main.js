@@ -109,9 +109,9 @@ function general() {
         label_input3.innerHTML = input3.value + "%";
 
         if (suma <= 100) {
-            label_input1.style.color = "white"
-            label_input2.style.color = "white"
-            label_input3.style.color = "white"
+            label_input1.style.color = "black"
+            label_input2.style.color = "black"
+            label_input3.style.color = "black"
         } else {
             label_input1.style.color = "red"
             label_input2.style.color = "red"

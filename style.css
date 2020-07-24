@@ -1,22 +1,24 @@
 body {
-    background-color: #1E1E1E;
+    background-color: white;
     overflow: hidden;
     margin: 0;
     padding: 0;
+    font-family: Segoe UI;
+    color: black;
 }
 
 /*CLASES*/
 .bordes_triangulo {
-    stroke: #9CDCFE;
+    stroke: black;
     stroke-miterlimit: 10;
-    stroke-width: 0.25px;
+    stroke-width: 0.1px;
     stroke-linecap: round;
 }
 
 .lineas_porcentaje {
-    stroke: #9CDCFE;
+    stroke: black;
     stroke-miterlimit: 10;
-    stroke-width: 0.2px;
+    stroke-width: 0.1px;
     stroke-linecap: round;
     fill: none;
     opacity: 0;
@@ -29,7 +31,6 @@ body {
 
 .labels {
     position: absolute;
-    color: white;
     display: none;
 }
 
@@ -93,11 +94,11 @@ body {
 }
 
 #punto {
-    fill: #FE0000;
+    fill: red;
     display: none;
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 500px) {
 
     /*CLASES ADAPTABLES*/
     .inputs {
@@ -133,56 +134,56 @@ body {
     }
 
     #label_input1 {
-        top: 4%;
+        top: 6.5%;
         right: 54.5%;
     }
 
     #label_input2 {
-        top: 77%;
+        top: 79.5%;
         right: 67.5%;
     }
 
     #label_input3 {
-        top: 77%;
+        top: 79.5%;
         right: 42.5%;
     }
 
     #label_input1_normalizado {
-        top: 4%;
+        top: 6.5%;
         left: 55%;
     }
 
     #label_input2_normalizado {
-        top: 77%;
+        top: 79.5%;
         left: 42%;
     }
 
     #label_input3_normalizado {
-        top: 77%;
+        top: 79.5%;
         left: 67%;
     }
 
     #label_nombre_input1 {
-        top: 1%;
+        top: 3.5%;
         right: 50%;
         transform: translateX(+50%);
     }
 
     #label_nombre_input2 {
-        top: 80%;
+        top: 82.5%;
         right: 63%;
         transform: translateX(+50%);
     }
 
     #label_nombre_input3 {
-        top: 80%;
+        top: 82.5%;
         right: 37.5%;
         transform: translateX(+50%);
     }
 
     /*>QAP*/
     #label_check_QAP {
-        color: white;
+
         position: absolute;
         top: 8%;
         left: 15%;
@@ -191,7 +192,6 @@ body {
     }
 
     #label_nombre_QAP {
-        color: honeydew;
         position: absolute;
         display: none;
         top: 84%;
@@ -201,7 +201,7 @@ body {
 
     /*>QAPv*/
     #label_check_QAPv {
-        color: white;
+
         position: absolute;
         top: 13%;
         left: 15%;
@@ -210,7 +210,6 @@ body {
     }
 
     #label_nombre_QAPv {
-        color: honeydew;
         position: absolute;
         display: none;
         top: 84%;
@@ -220,7 +219,7 @@ body {
 
     /*>GABRO_hbl*/
     #label_check_GABRO_hbl {
-        color: white;
+
         position: absolute;
         top: 18%;
         left: 15%;
@@ -229,7 +228,6 @@ body {
     }
 
     #label_nombre_GABRO_hbl {
-        color: honeydew;
         position: absolute;
         display: none;
         top: 84%;
@@ -239,7 +237,7 @@ body {
 
     /*>GABRO_olv*/
     #label_check_GABRO_olv {
-        color: white;
+
         position: absolute;
         top: 23%;
         left: 15%;
@@ -248,7 +246,6 @@ body {
     }
 
     #label_nombre_GABRO_olv {
-        color: honeydew;
         position: absolute;
         display: none;
         top: 84%;
@@ -258,7 +255,7 @@ body {
 
     /*>GABRO_px*/
     #label_check_GABRO_px {
-        color: white;
+
         position: absolute;
         top: 28%;
         left: 15%;
@@ -267,7 +264,6 @@ body {
     }
 
     #label_nombre_GABRO_px {
-        color: honeydew;
         position: absolute;
         display: none;
         top: 84%;
@@ -277,7 +273,7 @@ body {
 
     /*>UM_hbl*/
     #label_check_UM_hbl {
-        color: white;
+
         position: absolute;
         top: 33%;
         left: 15%;
@@ -286,7 +282,6 @@ body {
     }
 
     #label_nombre_UM_hbl {
-        color: honeydew;
         position: absolute;
         display: none;
         top: 84%;
@@ -296,7 +291,7 @@ body {
 
     /*>UM_px*/
     #label_check_UM_px {
-        color: white;
+
         position: absolute;
         top: 38%;
         left: 15%;
@@ -305,7 +300,6 @@ body {
     }
 
     #label_nombre_UM_px {
-        color: honeydew;
         position: absolute;
         display: none;
         top: 84%;
@@ -327,7 +321,6 @@ body {
     }
 
     .label_nombre {
-        color: honeydew;
         position: absolute;
         display: none;
         text-align: center;
@@ -357,56 +350,56 @@ body {
     }
 
     #label_input1 {
-        top: 77%;
+        top: 79.5%;
         right: 75%;
     }
 
     #label_input2 {
-        top: 82%;
+        top: 84.5%;
         right: 75%;
     }
 
     #label_input3 {
-        top: 87%;
+        top: 89.5%;
         right: 75%;
     }
 
     #label_input1_normalizado {
-        top: 77%;
+        top: 79.5%;
         left: 80%;
     }
 
     #label_input2_normalizado {
-        top: 82%;
+        top: 84.5%;
         left: 80%;
     }
 
     #label_input3_normalizado {
-        top: 87%;
+        top: 89.5%;
         left: 80%;
     }
 
     #label_nombre_input1 {
-        top: 77%;
+        top: 79.5%;
         right: 90%;
         transform: translateX(+50%);
     }
 
     #label_nombre_input2 {
-        top: 82%;
+        top: 84.5%;
         right: 90%;
         transform: translateX(+50%);
     }
 
     #label_nombre_input3 {
-        top: 87%;
+        top: 89.5%;
         right: 90%;
         transform: translateX(+50%);
     }
 
     /*>QAP*/
     #label_check_QAP {
-        color: white;
+
         position: absolute;
         top: 0%;
         left: 5%;
@@ -416,7 +409,7 @@ body {
 
     /*>QAPv*/
     #label_check_QAPv {
-        color: white;
+
         position: absolute;
         top: 5%;
         left: 5%;
@@ -426,7 +419,7 @@ body {
 
     /*>GABRO_hbl*/
     #label_check_GABRO_hbl {
-        color: white;
+
         position: absolute;
         top: 0%;
         left: 66%;
@@ -436,7 +429,7 @@ body {
 
     /*>GABRO_olv*/
     #label_check_GABRO_olv {
-        color: white;
+
         position: absolute;
         top: 5%;
         left: 66%;
@@ -446,7 +439,7 @@ body {
 
     /*>GABRO_px*/
     #label_check_GABRO_px {
-        color: white;
+
         position: absolute;
         top: 10%;
         left: 66%;
@@ -456,7 +449,7 @@ body {
 
     /*>UM_hbl*/
     #label_check_UM_hbl {
-        color: white;
+
         position: absolute;
         top: 15%;
         left: 66%;
@@ -466,7 +459,7 @@ body {
 
     /*>UM_px*/
     #label_check_UM_px {
-        color: white;
+
         position: absolute;
         top: 20%;
         left: 66%;
@@ -484,7 +477,7 @@ body {
 
 @keyframes aparecer_opacity_05 {
     to {
-        opacity: 0.5;
+        opacity: 0.3;
     }
 }
 
