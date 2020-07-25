@@ -109,9 +109,9 @@ function general() {
         label_input3.innerHTML = input3.value + "%";
 
         if (suma <= 100) {
-            label_input1.style.color = "black"
-            label_input2.style.color = "black"
-            label_input3.style.color = "black"
+            label_input1.style.color = "white"
+            label_input2.style.color = "white"
+            label_input3.style.color = "white"
         } else {
             label_input1.style.color = "red"
             label_input2.style.color = "red"
@@ -416,254 +416,75 @@ function general() {
     }
 }
 
-function mostrar_ocultar() {
-    //DESCLICKEAR CHECHBOXS
-    for (let i = 0; i < checkboxs.length; i++) {
-        if (checkboxs[i] != this) {
-            checkboxs[i].checked = 0;
-        }
+
+function poligonos(actual) {
+
+    let poligonosActual = document.getElementsByClassName("poligonos_" + actual);
+    let poligonos = document.getElementsByClassName("poligonos");
+
+    let nombreActual = document.getElementById("label_nombre_" + actual);
+    let nombres = document.getElementsByClassName("label_nombre");
+
+    let opcion = document.getElementById(actual);
+
+    //Mostrar nombre
+    for (let i = 0; i < nombres.length; i++) {
+        nombres[i].style.display = "none";
     }
 
-    //MOSTRAR/OCULTAR NOMBRES INPUTS
+    nombreActual.style.display = "block";
 
-    //>QAP
-    if (check_QAP.checked == true) {
-        label_nombre_input1.innerHTML = "Qz";
-        label_nombre_input2.innerHTML = "Fdk";
-        label_nombre_input3.innerHTML = "Plg";
-
-        label_nombre_input1.style.display = "block";
-        label_nombre_input2.style.display = "block";
-        label_nombre_input3.style.display = "block";
-
-        //>QAPv
-    } else if (check_QAPv.checked == true) {
-        label_nombre_input1.innerHTML = "Qz";
-        label_nombre_input2.innerHTML = "Fdk";
-        label_nombre_input3.innerHTML = "Plg";
-
-        label_nombre_input1.style.display = "block";
-        label_nombre_input2.style.display = "block";
-        label_nombre_input3.style.display = "block";
-
-        //>GABRO_hbl
-    } else if (check_GABRO_hbl.checked == true) {
-        label_nombre_input1.innerHTML = "Plg";
-        label_nombre_input2.innerHTML = "Px";
-        label_nombre_input3.innerHTML = "Hbl";
-
-        label_nombre_input1.style.display = "block";
-        label_nombre_input2.style.display = "block";
-        label_nombre_input3.style.display = "block";
-
-        //>GABRO_olv
-    } else if (check_GABRO_olv.checked == true) {
-        label_nombre_input1.innerHTML = "Plg";
-        label_nombre_input2.innerHTML = "Px";
-        label_nombre_input3.innerHTML = "Olv";
-
-        label_nombre_input1.style.display = "block";
-        label_nombre_input2.style.display = "block";
-        label_nombre_input3.style.display = "block";
-
-        //>GABRO_px
-    } else if (check_GABRO_px.checked == true) {
-        label_nombre_input1.innerHTML = "Plg";
-        label_nombre_input2.innerHTML = "Opx";
-        label_nombre_input3.innerHTML = "Cpx";
-
-        label_nombre_input1.style.display = "block";
-        label_nombre_input2.style.display = "block";
-        label_nombre_input3.style.display = "block";
-
-        //>UM_hbl
-    } else if (check_UM_hbl.checked == true) {
-        label_nombre_input1.innerHTML = "Olv";
-        label_nombre_input2.innerHTML = "Px";
-        label_nombre_input3.innerHTML = "Hbl";
-
-        label_nombre_input1.style.display = "block";
-        label_nombre_input2.style.display = "block";
-        label_nombre_input3.style.display = "block";
-
-        //>UM_px
-    } else if (check_UM_px.checked == true) {
-        label_nombre_input1.innerHTML = "Olv";
-        label_nombre_input2.innerHTML = "Opx";
-        label_nombre_input3.innerHTML = "Cpx";
-
-        label_nombre_input1.style.display = "block";
-        label_nombre_input2.style.display = "block";
-        label_nombre_input3.style.display = "block";
-
-    } else {
-        label_nombre_input1.style.display = "none";
-        label_nombre_input2.style.display = "none";
-        label_nombre_input3.style.display = "none";
+    //Mostrar poligonos
+    for (let i = 0; i < poligonos.length; i++) {
+        poligonos[i].style.display = "none";
     }
 
-    //MOSTRAR/OCULTAR POLIGONOS
-
-    //>QAP
-    if (check_QAP.checked == true) {
-        for (let i = 0; i < poligonos_QAP.length; i++) {
-            poligonos_QAP[i].style.display = "block"
-            poligonos_QAP[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        }
-    } else {
-        for (let i = 0; i < poligonos_QAP.length; i++) {
-            poligonos_QAP[i].style.display = "none";
-        }
+    for (let i = 0; i < poligonosActual.length; i++) {
+        poligonosActual[i].style.display = "block";
+        poligonosActual[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
+        poligonosActual[i].style.opacity = "50%";
+        poligonosActual[i].addEventListener("click", lista);
     }
 
-    //>QAPv
-    if (check_QAPv.checked == true) {
-        for (let i = 0; i < poligonos_QAPv.length; i++) {
-            poligonos_QAPv[i].style.display = "block"
-            poligonos_QAPv[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        }
-    } else {
-        for (let i = 0; i < poligonos_QAPv.length; i++) {
-            poligonos_QAPv[i].style.display = "none";
-        }
+    //Mostrar minerales
+    if (document.getElementById("QAP").checked == true) {
+        document.getElementById("label_nombre_input1").innerHTML = "Qz";
+        document.getElementById("label_nombre_input2").innerHTML = "Fdk";
+        document.getElementById("label_nombre_input3").innerHTML = "Plg";
+    } else if (document.getElementById("QAPv").checked == true) {
+        document.getElementById("label_nombre_input1").innerHTML = "Qz";
+        document.getElementById("label_nombre_input2").innerHTML = "Fdk";
+        document.getElementById("label_nombre_input3").innerHTML = "Plg";
+    } else if (document.getElementById("GABRO_hbl").checked == true) {
+        document.getElementById("label_nombre_input1").innerHTML = "Plg";
+        document.getElementById("label_nombre_input2").innerHTML = "Px";
+        document.getElementById("label_nombre_input3").innerHTML = "Hbl";
+    } else if (document.getElementById("GABRO_olv").checked == true) {
+        document.getElementById("label_nombre_input1").innerHTML = "Plg";
+        document.getElementById("label_nombre_input2").innerHTML = "Px";
+        document.getElementById("label_nombre_input3").innerHTML = "Olv";
+    } else if (document.getElementById("GABRO_px").checked == true) {
+        document.getElementById("label_nombre_input1").innerHTML = "Plg";
+        document.getElementById("label_nombre_input2").innerHTML = "Opx";
+        document.getElementById("label_nombre_input3").innerHTML = "Cxp";
+    } else if (document.getElementById("UM_hbl").checked == true) {
+        document.getElementById("label_nombre_input1").innerHTML = "Olv";
+        document.getElementById("label_nombre_input2").innerHTML = "Px";
+        document.getElementById("label_nombre_input3").innerHTML = "Hbl";
+    } else if (document.getElementById("UM_px").checked == true) {
+        document.getElementById("label_nombre_input1").innerHTML = "Olv";
+        document.getElementById("label_nombre_input2").innerHTML = "Opx";
+        document.getElementById("label_nombre_input3").innerHTML = "Cpx";
     }
-
-    //>GABRO_hbl
-    if (check_GABRO_hbl.checked == true) {
-        for (let i = 0; i < poligonos_GABRO_hbl.length; i++) {
-            poligonos_GABRO_hbl[i].style.display = "block"
-            poligonos_GABRO_hbl[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        }
-    } else {
-        for (let i = 0; i < poligonos_GABRO_hbl.length; i++) {
-            poligonos_GABRO_hbl[i].style.display = "none";
-        }
-    }
-
-    //>GABRO_olv
-    if (check_GABRO_olv.checked == true) {
-        for (let i = 0; i < poligonos_GABRO_olv.length; i++) {
-            poligonos_GABRO_olv[i].style.display = "block"
-            poligonos_GABRO_olv[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        }
-    } else {
-        for (let i = 0; i < poligonos_GABRO_olv.length; i++) {
-            poligonos_GABRO_olv[i].style.display = "none";
-        }
-    }
-
-    //>GABRO_px
-    if (check_GABRO_px.checked == true) {
-        for (let i = 0; i < poligonos_GABRO_px.length; i++) {
-            poligonos_GABRO_px[i].style.display = "block"
-            poligonos_GABRO_px[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        }
-    } else {
-        for (let i = 0; i < poligonos_GABRO_px.length; i++) {
-            poligonos_GABRO_px[i].style.display = "none";
-        }
-    }
-
-    //>UM_hbl
-    if (check_UM_hbl.checked == true) {
-        for (let i = 0; i < poligonos_UM_hbl.length; i++) {
-            poligonos_UM_hbl[i].style.display = "block"
-            poligonos_UM_hbl[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        }
-    } else {
-        for (let i = 0; i < poligonos_UM_hbl.length; i++) {
-            poligonos_UM_hbl[i].style.display = "none";
-        }
-    }
-
-    //>UM_px
-    if (check_UM_px.checked == true) {
-        for (let i = 0; i < poligonos_UM_px.length; i++) {
-            poligonos_UM_px[i].style.display = "block"
-            poligonos_UM_px[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        }
-    } else {
-        for (let i = 0; i < poligonos_UM_px.length; i++) {
-            poligonos_UM_px[i].style.display = "none";
-        }
-    }
-
-    //MOSTRAR/OCULTAR LABEL NOMBRE ROCA
-
-    //>QAP
-    if (check_QAP.checked == true) {
-        label_nombre_QAP.style.display = "block";
-    } else {
-        label_nombre_QAP.style.display = "none";
-    }
-
-    //>QAPv
-    if (check_QAPv.checked == true) {
-        label_nombre_QAPv.style.display = "block";
-    } else {
-        label_nombre_QAPv.style.display = "none";
-    }
-
-    //>GABRO_hbl
-    if (check_GABRO_hbl.checked == true) {
-        label_nombre_GABRO_hbl.style.display = "block";
-    } else {
-        label_nombre_GABRO_hbl.style.display = "none";
-    }
-
-    //>GABRO_olv
-    if (check_GABRO_olv.checked == true) {
-        label_nombre_GABRO_olv.style.display = "block";
-    } else {
-        label_nombre_GABRO_olv.style.display = "none";
-    }
-
-    //>GABRO_px
-    if (check_GABRO_px.checked == true) {
-        label_nombre_GABRO_px.style.display = "block";
-    } else {
-        label_nombre_GABRO_px.style.display = "none";
-    }
-
-    //>UM_hbl
-    if (check_UM_hbl.checked == true) {
-        label_nombre_UM_hbl.style.display = "block";
-    } else {
-        label_nombre_UM_hbl.style.display = "none";
-    }
-
-    //>UM_px
-    if (check_UM_px.checked == true) {
-        label_nombre_UM_px.style.display = "block";
-    } else {
-        label_nombre_UM_px.style.display = "none";
-    }
-
 }
 
-//AGREGAR EVENTOS
-input1.addEventListener("input", general);
-input2.addEventListener("input", general);
-input3.addEventListener("input", general);
+document.getElementById("click").addEventListener("click", lista);
 
-//CHECKS
-//>QAP
-check_QAP.addEventListener("click", mostrar_ocultar);
-
-//>QAPv
-check_QAPv.addEventListener("click", mostrar_ocultar);
-
-//>GABRO_hbl
-check_GABRO_hbl.addEventListener("click", mostrar_ocultar);
-
-//>GABRO_olv
-check_GABRO_olv.addEventListener("click", mostrar_ocultar);
-
-//>GABRO_px
-check_GABRO_px.addEventListener("click", mostrar_ocultar);
-
-//>UM_hbl
-check_UM_hbl.addEventListener("click", mostrar_ocultar);
-
-//>UM_px
-check_UM_px.addEventListener("click", mostrar_ocultar);
+function lista() {
+    let lista = document.getElementById("lista");
+    if (lista.style.display == "none") {
+        lista.style.display = "block";
+    } else {
+        lista.style.display = "none";
+    }
+}

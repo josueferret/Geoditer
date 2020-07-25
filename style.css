@@ -1,22 +1,37 @@
 body {
-    background-color: white;
+    background-color: #1E1E1E;
+    color: white;
+    font-family: Segoe UI;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    font-family: Segoe UI;
-    color: black;
 }
 
 /*CLASES*/
 .bordes_triangulo {
-    stroke: black;
+    stroke: white;
     stroke-miterlimit: 10;
     stroke-width: 0.1px;
     stroke-linecap: round;
 }
 
+#lista {
+    border: 1px solid white;
+    padding: 5%;
+    border-radius: 10%;
+    background-color: #1E1E1E;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+[type="radio"] {
+    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
+}
+
 .lineas_porcentaje {
-    stroke: black;
+    stroke: white;
     stroke-miterlimit: 10;
     stroke-width: 0.1px;
     stroke-linecap: round;
@@ -31,49 +46,10 @@ body {
 
 .labels {
     position: absolute;
-    display: none;
 }
 
-/*>QAP*/
-.poligonos_QAP {
+.poligonos {
     display: none;
-    opacity: 0.5;
-}
-
-/*>QAPv*/
-.poligonos_QAPv {
-    display: none;
-    opacity: 0.5;
-}
-
-/*>GABRO_hbl*/
-.poligonos_GABRO_hbl {
-    display: none;
-    opacity: 0.5;
-}
-
-/*>GABRO_olv*/
-.poligonos_GABRO_olv {
-    display: none;
-    opacity: 0.5;
-}
-
-/*>GABRO_px*/
-.poligonos_GABRO_px {
-    display: none;
-    opacity: 0.5;
-}
-
-/*>UM_hbl*/
-.poligonos_UM_hbl {
-    display: none;
-    opacity: 0.5;
-}
-
-/*>UM_px*/
-.poligonos_UM_px {
-    display: none;
-    opacity: 0.5;
 }
 
 /*IDS*/
@@ -182,14 +158,6 @@ body {
     }
 
     /*>QAP*/
-    #label_check_QAP {
-
-        position: absolute;
-        top: 8%;
-        left: 15%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
 
     #label_nombre_QAP {
         position: absolute;
@@ -200,14 +168,6 @@ body {
     }
 
     /*>QAPv*/
-    #label_check_QAPv {
-
-        position: absolute;
-        top: 13%;
-        left: 15%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
 
     #label_nombre_QAPv {
         position: absolute;
@@ -218,14 +178,6 @@ body {
     }
 
     /*>GABRO_hbl*/
-    #label_check_GABRO_hbl {
-
-        position: absolute;
-        top: 18%;
-        left: 15%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
 
     #label_nombre_GABRO_hbl {
         position: absolute;
@@ -236,14 +188,6 @@ body {
     }
 
     /*>GABRO_olv*/
-    #label_check_GABRO_olv {
-
-        position: absolute;
-        top: 23%;
-        left: 15%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
 
     #label_nombre_GABRO_olv {
         position: absolute;
@@ -254,14 +198,6 @@ body {
     }
 
     /*>GABRO_px*/
-    #label_check_GABRO_px {
-
-        position: absolute;
-        top: 28%;
-        left: 15%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
 
     #label_nombre_GABRO_px {
         position: absolute;
@@ -272,14 +208,6 @@ body {
     }
 
     /*>UM_hbl*/
-    #label_check_UM_hbl {
-
-        position: absolute;
-        top: 33%;
-        left: 15%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
 
     #label_nombre_UM_hbl {
         position: absolute;
@@ -290,14 +218,6 @@ body {
     }
 
     /*>UM_px*/
-    #label_check_UM_px {
-
-        position: absolute;
-        top: 38%;
-        left: 15%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
 
     #label_nombre_UM_px {
         position: absolute;
@@ -395,76 +315,6 @@ body {
         top: 89.5%;
         right: 90%;
         transform: translateX(+50%);
-    }
-
-    /*>QAP*/
-    #label_check_QAP {
-
-        position: absolute;
-        top: 0%;
-        left: 5%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
-
-    /*>QAPv*/
-    #label_check_QAPv {
-
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
-
-    /*>GABRO_hbl*/
-    #label_check_GABRO_hbl {
-
-        position: absolute;
-        top: 0%;
-        left: 66%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
-
-    /*>GABRO_olv*/
-    #label_check_GABRO_olv {
-
-        position: absolute;
-        top: 5%;
-        left: 66%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
-
-    /*>GABRO_px*/
-    #label_check_GABRO_px {
-
-        position: absolute;
-        top: 10%;
-        left: 66%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
-
-    /*>UM_hbl*/
-    #label_check_UM_hbl {
-
-        position: absolute;
-        top: 15%;
-        left: 66%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-    }
-
-    /*>UM_px*/
-    #label_check_UM_px {
-
-        position: absolute;
-        top: 20%;
-        left: 66%;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
     }
 }
 
