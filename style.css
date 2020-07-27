@@ -9,6 +9,7 @@ body {
 }
 
 #roca {
+    padding: 1em;
     text-align: center;
     font-size: 16px;
 }
@@ -70,7 +71,7 @@ body {
     text-align: left;
     padding-left: 3em;
     padding-top: 3.2em;
-    top: 7%;
+    top: 10%;
     left: 10%;
 }
 
@@ -101,8 +102,7 @@ body {
     position: absolute;
     text-align: center;
     padding: 1em;
-    width: 9.25em;
-    top: 7%;
+    top: 10%;
     left: 10%;
     background-color: #1a1919;
     border-radius: 1em;
