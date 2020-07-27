@@ -72,9 +72,9 @@ body {
     position: absolute;
     text-align: left;
     padding-left: 3em;
-    padding-top: 2em;
+    padding-top: 2.5em;
     top: 12%;
-    left: 21%;
+    left: 18%;
 }
 
 #lista span {
@@ -103,10 +103,10 @@ body {
 #boton {
     position: absolute;
     text-align: center;
-    height: 1.9em;
-    width: 2em;
+    height: 2.4em;
+    width: 2.5em;
     top: 12%;
-    left: 21%;
+    left: 18%;
     background-color: #1a1919;
     border-radius: 0.5em;
     cursor: context-menu;
@@ -115,11 +115,13 @@ body {
 #boton:before {
     content: "";
     display: block;
-    background-color: white;
-    width: 1em;
-    height: 0.1em;
+    border-radius: 0.1em;
+    background-color: darkgray;
+    color: darkgray;
+    width: 1.5em;
+    height: 0.2em;
     position: absolute;
     left: 0.5em;
     top: 0.6em;
-    box-shadow: 0 0.3em, 0 0.6em;
+    box-shadow: 0 0.5em, 0 1em;
 }
