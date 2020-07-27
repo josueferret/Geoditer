@@ -9,7 +9,9 @@ body {
 }
 
 #roca {
-    padding: 1em;
+    padding: 0em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     text-align: center;
     font-size: 16px;
 }
@@ -70,9 +72,9 @@ body {
     position: absolute;
     text-align: left;
     padding-left: 3em;
-    padding-top: 3.2em;
-    top: 10%;
-    left: 10%;
+    padding-top: 2em;
+    top: 12%;
+    left: 21%;
 }
 
 #lista span {
@@ -101,10 +103,23 @@ body {
 #boton {
     position: absolute;
     text-align: center;
-    padding: 1em;
-    top: 10%;
-    left: 10%;
+    height: 1.9em;
+    width: 2em;
+    top: 12%;
+    left: 21%;
     background-color: #1a1919;
-    border-radius: 1em;
+    border-radius: 0.5em;
     cursor: context-menu;
+}
+
+#boton:before {
+    content: "";
+    display: block;
+    background-color: white;
+    width: 1em;
+    height: 0.1em;
+    position: absolute;
+    left: 0.5em;
+    top: 0.6em;
+    box-shadow: 0 0.3em, 0 0.6em;
 }
