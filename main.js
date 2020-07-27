@@ -1,11 +1,17 @@
+document.getElementById("lista").style.visibility = "hidden";
+
+function lista() {
+    if (document.getElementById("lista").style.visibility == "hidden") {
+        document.getElementById("lista").style.visibility = "visible";
+    } else {
+        document.getElementById("lista").style.visibility = "hidden";
+    }
+}
+
 //VARIABLES
 var input1 = document.getElementById("input1");
 var input2 = document.getElementById("input2");
 var input3 = document.getElementById("input3");
-
-var label_nombre_input1 = document.getElementById("label_nombre_input1");
-var label_nombre_input2 = document.getElementById("label_nombre_input2");
-var label_nombre_input3 = document.getElementById("label_nombre_input3");
 
 var label_input1 = document.getElementById("label_input1");
 var label_input2 = document.getElementById("label_input2");
@@ -15,178 +21,150 @@ var label_input1_normalizado = document.getElementById("label_input1_normalizado
 var label_input2_normalizado = document.getElementById("label_input2_normalizado");
 var label_input3_normalizado = document.getElementById("label_input3_normalizado");
 
+var roca = document.getElementById("roca");
+
 var svg_punto = document.getElementById("punto");
 
 var checkboxs = document.getElementsByClassName("checkboxs");
 
 //>QAP
-var label_nombre_QAP = document.getElementById("label_nombre_QAP");
+
 var check_QAP = document.getElementById("check_QAP");
 var poligonos_QAP = document.getElementsByClassName("poligonos_QAP");
 
+for (let i = 0; i < document.getElementsByClassName("poligonos").length; i++) {
+    document.getElementsByClassName("poligonos")[i].style.visibility = "hidden";
+}
+
+for (let i = 0; i < poligonos_QAP.length; i++) {
+    poligonos_QAP[i].style.visibility = "visible";
+    poligonos_QAP[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
+    poligonos_QAP[i].style.opacity = "0.5 ";
+}
+
 //>QAPv
-var label_nombre_QAPv = document.getElementById("label_nombre_QAPv");
+
 var check_QAPv = document.getElementById("check_QAPv");
 var poligonos_QAPv = document.getElementsByClassName("poligonos_QAPv");
 
 //>GABRO_hbl
-var label_nombre_GABRO_hbl = document.getElementById("label_nombre_GABRO_hbl");
 var check_GABRO_hbl = document.getElementById("check_GABRO_hbl");
 var poligonos_GABRO_hbl = document.getElementsByClassName("poligonos_GABRO_hbl");
 
 //>GABRO_olv
-var label_nombre_GABRO_olv = document.getElementById("label_nombre_GABRO_olv");
 var check_GABRO_olv = document.getElementById("check_GABRO_olv");
 var poligonos_GABRO_olv = document.getElementsByClassName("poligonos_GABRO_olv");
 
 //>GABRO_px
-var label_nombre_GABRO_px = document.getElementById("label_nombre_GABRO_px");
 var check_GABRO_px = document.getElementById("check_GABRO_px");
 var poligonos_GABRO_px = document.getElementsByClassName("poligonos_GABRO_px");
 
 //>UM_hbl
-var label_nombre_UM_hbl = document.getElementById("label_nombre_UM_hbl");
 var check_UM_hbl = document.getElementById("check_UM_hbl");
 var poligonos_UM_hbl = document.getElementsByClassName("poligonos_UM_hbl");
 
 //>UM_px
-var label_nombre_UM_px = document.getElementById("label_nombre_UM_px");
 var check_UM_px = document.getElementById("check_UM_px");
 var poligonos_UM_px = document.getElementsByClassName("poligonos_UM_px");
 
-//FUNCIONES
 function general() {
     let suma = input1.value * 1 + input2.value * 1 + input3.value * 1;
 
-    if (suma !== 0) {
-        //NORMALIZAR Y COORDENADAS
-        let input1_normalizado = input1.value * 100 / suma;
-        let input2_normalizado = input2.value * 100 / suma;
-        let input3_normalizado = input3.value * 100 / suma;
+    let input1_normalizado = input1.value * 100 / suma;
+    let input2_normalizado = input2.value * 100 / suma;
+    let input3_normalizado = input3.value * 100 / suma;
 
-        let x = input3_normalizado + input1_normalizado / 2;
-        let y = input1_normalizado;
+    if (suma != 0) {
+        var x = input3_normalizado + input1_normalizado / 2;
+        var y = input1_normalizado;
 
-        //MOSTRAR EN PANTALLA
-        svg_punto.style.display = "block";
-
-        label_input1.style.display = "block";
-        label_input2.style.display = "block";
-        label_input3.style.display = "block";
-
-        label_input1_normalizado.style.display = "block";
-        label_input2_normalizado.style.display = "block";
-        label_input3_normalizado.style.display = "block";
-
-        //>QAP
-        label_nombre_QAP.style.visibility = "visible";
-
-        //>QAPv
-        label_nombre_QAPv.style.visibility = "visible";
-
-        //>GABRO_hbl
-        label_nombre_GABRO_hbl.style.visibility = "visible";
-
-        //>GABRO_olv
-        label_nombre_GABRO_olv.style.visibility = "visible";
-
-        //>GABRO_px
-        label_nombre_GABRO_px.style.visibility = "visible";
-
-        //>UM_hbl
-        label_nombre_UM_hbl.style.visibility = "visible";
-
-        //>UM_px
-        label_nombre_UM_px.style.visibility = "visible";
-
-        //MOVER PUNTO
         svg_punto.setAttribute("cx", x + 5);
         svg_punto.setAttribute("cy", 105 - y);
+    }
 
-        //MOSTRAR VALORES INPUTS
-        label_input1.innerHTML = input1.value + "%";
-        label_input2.innerHTML = input2.value + "%";
-        label_input3.innerHTML = input3.value + "%";
+    //MOSTRAR VALORES INPUTS
+    label_input1.innerHTML = input1.value + "%";
+    label_input2.innerHTML = input2.value + "%";
+    label_input3.innerHTML = input3.value + "%";
 
-        if (suma <= 100) {
-            label_input1.style.color = "white"
-            label_input2.style.color = "white"
-            label_input3.style.color = "white"
-        } else {
-            label_input1.style.color = "red"
-            label_input2.style.color = "red"
-            label_input3.style.color = "red"
-        }
+    if (suma <= 100) {
+        label_input1.style.color = "white"
+        label_input2.style.color = "white"
+        label_input3.style.color = "white"
+    } else {
+        label_input1.style.color = "salmon"
+        label_input2.style.color = "salmon"
+        label_input3.style.color = "salmon"
+    }
 
-        //MOSTRAR PORCENTAJES NORMALIZADOS
-        if (input1_normalizado != parseInt(input1_normalizado)) {
-            label_input1_normalizado.innerHTML = input1_normalizado.toFixed(2) + "%";
-        } else {
-            label_input1_normalizado.innerHTML = input1_normalizado + "%";
-        }
+    //MOSTRAR PORCENTAJES NORMALIZADOS
+    if (input1_normalizado != parseInt(input1_normalizado)) {
+        label_input1_normalizado.innerHTML = input1_normalizado.toFixed(2) + "%";
+    } else {
+        label_input1_normalizado.innerHTML = input1_normalizado + "%";
+    }
 
-        if (input2_normalizado != parseInt(input2_normalizado)) {
-            label_input2_normalizado.innerHTML = input2_normalizado.toFixed(2) + "%";
-        } else {
-            label_input2_normalizado.innerHTML = input2_normalizado + "%";
-        }
+    if (input2_normalizado != parseInt(input2_normalizado)) {
+        label_input2_normalizado.innerHTML = input2_normalizado.toFixed(2) + "%";
+    } else {
+        label_input2_normalizado.innerHTML = input2_normalizado + "%";
+    }
 
-        if (input3_normalizado != parseInt(input3_normalizado)) {
-            label_input3_normalizado.innerHTML = input3_normalizado.toFixed(2) + "%";
-        } else {
-            label_input3_normalizado.innerHTML = input3_normalizado + "%";
-        }
+    if (input3_normalizado != parseInt(input3_normalizado)) {
+        label_input3_normalizado.innerHTML = input3_normalizado.toFixed(2) + "%";
+    } else {
+        label_input3_normalizado.innerHTML = input3_normalizado + "%";
+    }
 
-        //NOMBRES
-
-        //>QAP
+    //>QAP
+    if (document.getElementById("QAP").checked == true) {
         let recta1_QAP = x * 2.5 - 25;
         let recta2_QAP = x * 6.666666666666667 - 233.33333333333337;
         let recta3_QAP = x * -2.5 + 225.0;
         let recta4_QAP = x * -6.666666666666667 + 433.33333333333337;
 
         if (y >= 90) {
-            label_nombre_QAP.innerHTML = "Cuarzolita (silexita)";
+            roca.innerHTML = "Cuarzolita (silexita)";
         } else if (y >= 60) {
-            label_nombre_QAP.innerHTML = "Granitoide rico en cuarzo";
+            roca.innerHTML = "Granitoide rico en cuarzo";
         } else if (y >= 20) {
             if (y >= recta1_QAP) {
-                label_nombre_QAP.innerHTML = 'Granito de feldespato alcalino';
+                roca.innerHTML = 'Granito de feldespato alcalino';
             } else if (y >= recta2_QAP) {
-                label_nombre_QAP.innerHTML = 'Sienogranito';
+                roca.innerHTML = 'Sienogranito';
             } else if (y >= recta3_QAP) {
-                label_nombre_QAP.innerHTML = 'Tonalita';
+                roca.innerHTML = 'Tonalita';
             } else if (y >= recta4_QAP) {
-                label_nombre_QAP.innerHTML = 'Granodiorita';
+                roca.innerHTML = 'Granodiorita';
             } else {
-                label_nombre_QAP.innerHTML = 'Monzogranito';
+                roca.innerHTML = 'Monzogranito';
             }
         } else if (y >= 5) {
             if (y >= recta1_QAP) {
-                label_nombre_QAP.innerHTML = 'Cuarzosienita de feldespato alcalino';
+                roca.innerHTML = 'Cuarzosienita de feldespato alcalino';
             } else if (y >= recta2_QAP) {
-                label_nombre_QAP.innerHTML = 'Cuarzosienita';
+                roca.innerHTML = 'Cuarzosienita';
             } else if (y >= recta3_QAP) {
-                label_nombre_QAP.innerHTML = 'Cuarzodiorita/Cuarzogabro';
+                roca.innerHTML = 'Cuarzodiorita/Cuarzogabro';
             } else if (y >= recta4_QAP) {
-                label_nombre_QAP.innerHTML = 'Cuarzo-monzodiorita/Cuarzo-monzogabro';
+                roca.innerHTML = 'Cuarzo-monzodiorita/Cuarzo-monzogabro';
             } else {
-                label_nombre_QAP.innerHTML = 'Cuarzomonzonita';
+                roca.innerHTML = 'Cuarzomonzonita';
             }
         } else if (y >= 0) {
             if (y >= recta1_QAP) {
-                label_nombre_QAP.innerHTML = 'Sienita de feldespato alcalino';
+                roca.innerHTML = 'Sienita de feldespato alcalino';
             } else if (y >= recta2_QAP) {
-                label_nombre_QAP.innerHTML = 'Sienita';
+                roca.innerHTML = 'Sienita';
             } else if (y >= recta3_QAP) {
-                label_nombre_QAP.innerHTML = 'Diorita/Gabro';
+                roca.innerHTML = 'Diorita/Gabro';
             } else if (y >= recta4_QAP) {
-                label_nombre_QAP.innerHTML = 'Monzodiorita/Monzogabro';
+                roca.innerHTML = 'Monzodiorita/Monzogabro';
             } else {
-                label_nombre_QAP.innerHTML = 'Monzonita';
+                roca.innerHTML = 'Monzonita';
             }
         }
-
+    } else if (document.getElementById("QAPv").checked == true) {
         //>QAPv
         let recta1_QAPv = x * 2.5 - 25;
         let recta2_QAPv = x * 6.666666666666667 - 233.33333333333337;
@@ -194,41 +172,41 @@ function general() {
         let recta4_QAPv = x * -6.666666666666667 + 433.33333333333337;
 
         if (y >= 60) {
-            label_nombre_QAPv.innerHTML = "-";
+            roca.innerHTML = "-";
         } else if (y >= 20) {
             if (y >= recta1_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Riolita de feldespato alcalino';
+                roca.innerHTML = 'Riolita de feldespato alcalino';
             } else if (y >= recta4_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Dacita';
+                roca.innerHTML = 'Dacita';
             } else {
-                label_nombre_QAPv.innerHTML = 'Riolita';
+                roca.innerHTML = 'Riolita';
             }
         } else if (y >= 5) {
             if (y >= recta1_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Cuarzo - traquita de feldespato alcalino';
+                roca.innerHTML = 'Cuarzo - traquita de feldespato alcalino';
             } else if (y >= recta2_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Cuarzo - traquita';
+                roca.innerHTML = 'Cuarzo - traquita';
             } else if (y >= recta3_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Basalto toelítico';
+                roca.innerHTML = 'Basalto toelítico';
             } else if (y >= recta4_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Andesita calcoalcalina';
+                roca.innerHTML = 'Andesita calcoalcalina';
             } else {
-                label_nombre_QAPv.innerHTML = 'Cuarzo - lacita';
+                roca.innerHTML = 'Cuarzo - lacita';
             }
         } else if (y >= 0) {
             if (y >= recta1_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Traquita de feldespato alcalino';
+                roca.innerHTML = 'Traquita de feldespato alcalino';
             } else if (y >= recta2_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Traquita';
+                roca.innerHTML = 'Traquita';
             } else if (y >= recta3_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Basalto calcoalcalino rico en Al';
+                roca.innerHTML = 'Basalto calcoalcalino rico en Al';
             } else if (y >= recta4_QAPv) {
-                label_nombre_QAPv.innerHTML = 'Mugearita';
+                roca.innerHTML = 'Mugearita';
             } else {
-                label_nombre_QAPv.innerHTML = 'Lacita con feldespatoides';
+                roca.innerHTML = 'Lacita con feldespatoides';
             }
         }
-
+    } else if (document.getElementById("GABRO_hbl").checked == true) {
         //>GABRO_hbl
         let recta1_GABRO_hbl = (x - 5) * 2 + 0;
         let recta2_GABRO_hbl = (x + 5) * -2 + 200;
@@ -236,28 +214,29 @@ function general() {
         let recta4_GABRO_hbl = (x - 90) * 2 + 0;
 
         if (y >= 90) {
-            label_nombre_GABRO_hbl.innerHTML = "Anortosita";
+            roca.innerHTML = "Anortosita";
         } else if (y >= 10) {
             if (y >= recta1_GABRO_hbl) {
-                label_nombre_GABRO_hbl.innerHTML = 'Gabro/Gabronorita/Norita';
+                roca.innerHTML = 'Gabro/Gabronorita/Norita';
             } else if (y >= recta2_GABRO_hbl) {
-                label_nombre_GABRO_hbl.innerHTML = 'Gabro hornbléndico';
+                roca.innerHTML = 'Gabro hornbléndico';
             } else if (x >= 50) {
-                label_nombre_GABRO_hbl.innerHTML = 'Gabro/Gabronorita/Norita hornbléndica';
+                roca.innerHTML = 'Gabro/Gabronorita/Norita hornbléndica';
             } else {
-                label_nombre_GABRO_hbl.innerHTML = 'Gabro/Gabronorita/Norita piroxénica';
+                roca.innerHTML = 'Gabro/Gabronorita/Norita piroxénica';
             }
         } else if (y >= 0) {
             if (y <= recta3_GABRO_hbl) {
-                label_nombre_GABRO_hbl.innerHTML = 'Piroxenita con plagioclasa';
+                roca.innerHTML = 'Piroxenita con plagioclasa';
             } else if (y <= recta4_GABRO_hbl) {
-                label_nombre_GABRO_hbl.innerHTML = 'Hornblendita con plagioclasa';
+                roca.innerHTML = 'Hornblendita con plagioclasa';
             } else if (x >= 50) {
-                label_nombre_GABRO_hbl.innerHTML = 'Hornblendita piroxénica con plagioclasa';
+                roca.innerHTML = 'Hornblendita piroxénica con plagioclasa';
             } else {
-                label_nombre_GABRO_hbl.innerHTML = 'Piroxenita hornbléndica con plagioclasa';
+                roca.innerHTML = 'Piroxenita hornbléndica con plagioclasa';
             }
         }
+    } else if (document.getElementById("GABRO_olv").checked == true) {
 
         //>GABRO_olv
         let recta1_GABRO_olv = (x - 5) * 2 + 0;
@@ -266,19 +245,19 @@ function general() {
         let recta4_GABRO_olv = (x - 90) * 2 + 0;
 
         if (y >= 90) {
-            label_nombre_GABRO_olv.innerHTML = "Anortosita";
+            roca.innerHTML = "Anortosita";
         } else if (y >= 10) {
             if (y >= recta1_GABRO_olv) {
-                label_nombre_GABRO_olv.innerHTML = 'Gabro/Gabronorita/Norita';
+                roca.innerHTML = 'Gabro/Gabronorita/Norita';
             } else if (y >= recta2_GABRO_olv) {
-                label_nombre_GABRO_olv.innerHTML = 'Troctolita';
+                roca.innerHTML = 'Troctolita';
             } else {
-                label_nombre_GABRO_olv.innerHTML = 'Gabro/Gabronorita/Norita olivínica';
+                roca.innerHTML = 'Gabro/Gabronorita/Norita olivínica';
             }
         } else if (y >= 0) {
-            label_nombre_GABRO_olv.innerHTML = 'Rocas ultramáficas con plagioclasa';
+            roca.innerHTML = 'Rocas ultramáficas con plagioclasa';
         }
-
+    } else if (document.getElementById("GABRO_px").checked == true) {
         //>GABRO_px
         let recta1_GABRO_px = (x - 5) * 2 + 0;
         let recta2_GABRO_px = (x + 5) * -2 + 200;
@@ -286,20 +265,21 @@ function general() {
         let recta4_GABRO_px = (x - 90) * 2 + 0;
 
         if (y >= 40) {
-            label_nombre_GABRO_px.innerHTML = "-";
+            roca.innerHTML = "-";
         } else if (y >= 10) {
             if (y >= recta1_GABRO_px) {
-                label_nombre_GABRO_px.innerHTML = 'Norita';
+                roca.innerHTML = 'Norita';
             } else if (y >= recta2_GABRO_px) {
-                label_nombre_GABRO_px.innerHTML = 'Gabro';
+                roca.innerHTML = 'Gabro';
             } else if (x >= 50) {
-                label_nombre_GABRO_px.innerHTML = 'Gabro ortopiroxénico';
+                roca.innerHTML = 'Gabro ortopiroxénico';
             } else {
-                label_nombre_GABRO_px.innerHTML = 'Norita clinopiroxénica';
+                roca.innerHTML = 'Norita clinopiroxénica';
             }
         } else if (y >= 0) {
-            label_nombre_GABRO_px.innerHTML = 'Piroxenita con plagioclasa';
+            roca.innerHTML = 'Piroxenita con plagioclasa';
         }
+    } else if (document.getElementById("UM_hbl").checked == true) {
 
         //>UM_hbl
         let recta1_UM_hbl = (x - 5) * 2 + 0;
@@ -308,40 +288,41 @@ function general() {
         let recta4_UM_hbl = (x - 90) * 2 + 0;
 
         if (y >= 90) {
-            label_nombre_UM_hbl.innerHTML = "Dunita";
+            roca.innerHTML = "Dunita";
         } else if (y >= 40) {
             if (y >= recta1_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Peridotita piroxénica";
+                roca.innerHTML = "Peridotita piroxénica";
             } else if (y >= recta2_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Peridotita hornbléndica";
+                roca.innerHTML = "Peridotita hornbléndica";
             } else {
-                label_nombre_UM_hbl.innerHTML = "Peridotita hornbléndica con piroxeno";
+                roca.innerHTML = "Peridotita hornbléndica con piroxeno";
             }
         } else if (y >= 5) {
             if (y <= recta3_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Piroxenita";
+                roca.innerHTML = "Piroxenita";
             } else if (y >= recta1_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Piroxenita olivínica";
+                roca.innerHTML = "Piroxenita olivínica";
             } else if (y <= recta4_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Hornblendita";
+                roca.innerHTML = "Hornblendita";
             } else if (y >= recta2_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Hornblendita olivínica";
+                roca.innerHTML = "Hornblendita olivínica";
             } else if (x >= 50) {
-                label_nombre_UM_hbl.innerHTML = "Hornblendita piroxénica con olivino";
+                roca.innerHTML = "Hornblendita piroxénica con olivino";
             } else {
-                label_nombre_UM_hbl.innerHTML = "Piroxenita hornbléndica con olivino";
+                roca.innerHTML = "Piroxenita hornbléndica con olivino";
             }
         } else if (y >= 0) {
             if (y <= recta3_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Piroxenita";
+                roca.innerHTML = "Piroxenita";
             } else if (y <= recta4_UM_hbl) {
-                label_nombre_UM_hbl.innerHTML = "Hornblendita";
+                roca.innerHTML = "Hornblendita";
             } else if (x >= 50) {
-                label_nombre_UM_hbl.innerHTML = "Hornblendita piroxénica";
+                roca.innerHTML = "Hornblendita piroxénica";
             } else {
-                label_nombre_UM_hbl.innerHTML = "Piroxenita hornbléndica";
+                roca.innerHTML = "Piroxenita hornbléndica";
             }
         }
+    } else if (document.getElementById("UM_px").checked == true) {
 
         //>UM_px
         let recta1_UM_px = (x - 5) * 2 + 0;
@@ -350,69 +331,52 @@ function general() {
         let recta4_UM_px = (x - 90) * 2 + 0;
 
         if (y >= 90) {
-            label_nombre_UM_px.innerHTML = "Dunita";
+            roca.innerHTML = "Dunita";
         } else if (y >= 40) {
             if (y >= recta1_UM_px) {
-                label_nombre_UM_px.innerHTML = "Harzburgita";
+                roca.innerHTML = "Harzburgita";
             } else if (y >= recta2_UM_px) {
-                label_nombre_UM_px.innerHTML = "Wehrlita";
+                roca.innerHTML = "Wehrlita";
             } else {
-                label_nombre_UM_px.innerHTML = "Lherzolita";
+                roca.innerHTML = "Lherzolita";
             }
         } else if (y >= 5) {
             if (y <= recta3_UM_px) {
-                label_nombre_UM_px.innerHTML = "Ortopiroxenita";
+                roca.innerHTML = "Ortopiroxenita";
             } else if (y >= recta1_UM_px) {
-                label_nombre_UM_px.innerHTML = "Ortopiroxenita olivínica";
+                roca.innerHTML = "Ortopiroxenita olivínica";
             } else if (y <= recta4_UM_px) {
-                label_nombre_UM_px.innerHTML = "Clinopiroxenita";
+                roca.innerHTML = "Clinopiroxenita";
             } else if (y >= recta2_UM_px) {
-                label_nombre_UM_px.innerHTML = "Clinopiroxenita olivínica";
+                roca.innerHTML = "Clinopiroxenita olivínica";
             } else {
-                label_nombre_UM_px.innerHTML = "Websterita olivínica";
+                roca.innerHTML = "Websterita olivínica";
             }
         } else if (y >= 0) {
             if (y <= recta3_UM_px) {
-                label_nombre_UM_px.innerHTML = "Ortopiroxenita";
+                roca.innerHTML = "Ortopiroxenita";
             } else if (y <= recta4_UM_px) {
-                label_nombre_UM_px.innerHTML = "Clinopiroxenita";
+                roca.innerHTML = "Clinopiroxenita";
             } else {
-                label_nombre_UM_px.innerHTML = "Websterita";
+                roca.innerHTML = "Websterita";
             }
         }
+    }
 
+    if (suma == 0) {
+        svg_punto.style.visibility = "hidden";
+
+        label_input1.innerHTML = "&nbsp;";
+        label_input2.innerHTML = "&nbsp;";
+        label_input3.innerHTML = "&nbsp;";
+
+        label_input1_normalizado.innerHTML = "&nbsp;";
+        label_input2_normalizado.innerHTML = "&nbsp;";
+        label_input3_normalizado.innerHTML = "&nbsp;";
+
+        roca.innerHTML = "&nbsp;";
     } else {
-        //OCULTAR LABELS (SI SUMA=0)
-        svg_punto.style.display = "none";
-
-        label_input1.style.display = "none";
-        label_input2.style.display = "none";
-        label_input3.style.display = "none";
-
-        label_input1_normalizado.style.display = "none";
-        label_input2_normalizado.style.display = "none";
-        label_input3_normalizado.style.display = "none";
-
-        //>QAP
-        label_nombre_QAP.style.visibility = "hidden";
-
-        //>QAPv
-        label_nombre_QAPv.style.visibility = "hidden";
-
-        //>GABRO_hbl
-        label_nombre_GABRO_hbl.style.visibility = "hidden";
-
-        //>GABRO_olv
-        label_nombre_GABRO_olv.style.visibility = "hidden";
-
-        //>GABRO_px
-        label_nombre_GABRO_px.style.visibility = "hidden";
-
-        //>UM_hbl
-        label_nombre_UM_hbl.style.visibility = "hidden";
-
-        //>UM_px
-        label_nombre_UM_px.style.visibility = "hidden";
+        svg_punto.style.visibility = "visible";
     }
 }
 
@@ -422,69 +386,47 @@ function poligonos(actual) {
     let poligonosActual = document.getElementsByClassName("poligonos_" + actual);
     let poligonos = document.getElementsByClassName("poligonos");
 
-    let nombreActual = document.getElementById("label_nombre_" + actual);
-    let nombres = document.getElementsByClassName("label_nombre");
-
     let opcion = document.getElementById(actual);
-
-    //Mostrar nombre
-    for (let i = 0; i < nombres.length; i++) {
-        nombres[i].style.display = "none";
-    }
-
-    nombreActual.style.display = "block";
 
     //Mostrar poligonos
     for (let i = 0; i < poligonos.length; i++) {
-        poligonos[i].style.display = "none";
+        poligonos[i].style.visibility = "hidden";
     }
 
     for (let i = 0; i < poligonosActual.length; i++) {
-        poligonosActual[i].style.display = "block";
+        poligonosActual[i].style.visibility = "visible";
         poligonosActual[i].style.fill = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
-        poligonosActual[i].style.opacity = "50%";
-        poligonosActual[i].addEventListener("click", lista);
+        poligonosActual[i].style.opacity = "0.5 ";
     }
 
     //Mostrar minerales
     if (document.getElementById("QAP").checked == true) {
-        document.getElementById("label_nombre_input1").innerHTML = "Qz";
-        document.getElementById("label_nombre_input2").innerHTML = "Fdk";
-        document.getElementById("label_nombre_input3").innerHTML = "Plg";
+        document.getElementById("mx1").innerHTML = "Qz";
+        document.getElementById("mx2").innerHTML = "Fdk";
+        document.getElementById("mx3").innerHTML = "Plg";
     } else if (document.getElementById("QAPv").checked == true) {
-        document.getElementById("label_nombre_input1").innerHTML = "Qz";
-        document.getElementById("label_nombre_input2").innerHTML = "Fdk";
-        document.getElementById("label_nombre_input3").innerHTML = "Plg";
+        document.getElementById("mx1").innerHTML = "Qz";
+        document.getElementById("mx2").innerHTML = "Fdk";
+        document.getElementById("mx3").innerHTML = "Plg";
     } else if (document.getElementById("GABRO_hbl").checked == true) {
-        document.getElementById("label_nombre_input1").innerHTML = "Plg";
-        document.getElementById("label_nombre_input2").innerHTML = "Px";
-        document.getElementById("label_nombre_input3").innerHTML = "Hbl";
+        document.getElementById("mx1").innerHTML = "Plg";
+        document.getElementById("mx2").innerHTML = "Px";
+        document.getElementById("mx3").innerHTML = "Hbl";
     } else if (document.getElementById("GABRO_olv").checked == true) {
-        document.getElementById("label_nombre_input1").innerHTML = "Plg";
-        document.getElementById("label_nombre_input2").innerHTML = "Px";
-        document.getElementById("label_nombre_input3").innerHTML = "Olv";
+        document.getElementById("mx1").innerHTML = "Plg";
+        document.getElementById("mx2").innerHTML = "Px";
+        document.getElementById("mx3").innerHTML = "Olv";
     } else if (document.getElementById("GABRO_px").checked == true) {
-        document.getElementById("label_nombre_input1").innerHTML = "Plg";
-        document.getElementById("label_nombre_input2").innerHTML = "Opx";
-        document.getElementById("label_nombre_input3").innerHTML = "Cxp";
+        document.getElementById("mx1").innerHTML = "Plg";
+        document.getElementById("mx2").innerHTML = "Opx";
+        document.getElementById("mx3").innerHTML = "Cxp";
     } else if (document.getElementById("UM_hbl").checked == true) {
-        document.getElementById("label_nombre_input1").innerHTML = "Olv";
-        document.getElementById("label_nombre_input2").innerHTML = "Px";
-        document.getElementById("label_nombre_input3").innerHTML = "Hbl";
+        document.getElementById("mx1").innerHTML = "Olv";
+        document.getElementById("mx2").innerHTML = "Px";
+        document.getElementById("mx3").innerHTML = "Hbl";
     } else if (document.getElementById("UM_px").checked == true) {
-        document.getElementById("label_nombre_input1").innerHTML = "Olv";
-        document.getElementById("label_nombre_input2").innerHTML = "Opx";
-        document.getElementById("label_nombre_input3").innerHTML = "Cpx";
-    }
-}
-
-document.getElementById("click").addEventListener("click", lista);
-
-function lista() {
-    let lista = document.getElementById("lista");
-    if (lista.style.display == "none") {
-        lista.style.display = "block";
-    } else {
-        lista.style.display = "none";
+        document.getElementById("mx1").innerHTML = "Olv";
+        document.getElementById("mx2").innerHTML = "Opx";
+        document.getElementById("mx3").innerHTML = "Cpx";
     }
 }

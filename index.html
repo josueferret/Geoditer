@@ -10,74 +10,14 @@
 </head>
 
 <body>
-    <div id="contenedor_svg">
+    <!--NOMBRE ROCA-->
+    <div id="roca">
+        <label id="roca">&nbsp;</label>
+    </div>
 
-        <svg id="triangulo" viewBox="0 0 110 110">
+    <div id="contenedor" onclick="lista()">
 
-            <!--BORDE TRIANGULO-->
-            <line id="borde_izquierdo" class="bordes_triangulo" x1="4.94" y1="105.06" x2="55" y2="4.94" />
-            <line id="borde_inferior" class="bordes_triangulo" x1="105.06" y1="105.06" x2="4.94" y2="105.06" />
-            <line id="borde_derecho" class="bordes_triangulo" x1="55" y1="4.94" x2="105.06" y2="105.06" />
-
-            <!--LINEAS PORCENTAJE-->
-            <line class="lineas_porcentaje" x1="9.94" y1="105.06" x2="7.44" y2="100.06" />
-            <line class="lineas_porcentaje" x1="9.94" y1="95.05" x2="14.95" y2="105.06" />
-            <line class="lineas_porcentaje" x1="12.45" y1="90.04" x2="19.96" y2="105.06" />
-            <line class="lineas_porcentaje" x1="14.95" y1="85.04" x2="24.96" y2="105.06" />
-            <line class="lineas_porcentaje" x1="17.45" y1="80.03" x2="29.97" y2="105.06" />
-            <line class="lineas_porcentaje" x1="19.96" y1="75.03" x2="34.97" y2="105.06" />
-            <line class="lineas_porcentaje" x1="22.46" y1="70.02" x2="39.98" y2="105.06" />
-            <line class="lineas_porcentaje" x1="24.96" y1="65.01" x2="44.99" y2="105.06" />
-            <line class="lineas_porcentaje" x1="27.47" y1="60.01" x2="49.99" y2="105.06" />
-            <line class="lineas_porcentaje" x1="55" y1="105.06" x2="29.97" y2="55" />
-            <line class="lineas_porcentaje" x1="32.47" y1="49.99" x2="60.01" y2="105.06" />
-            <line class="lineas_porcentaje" x1="34.97" y1="44.99" x2="65.01" y2="105.06" />
-            <line class="lineas_porcentaje" x1="37.48" y1="39.98" x2="70.02" y2="105.06" />
-            <line class="lineas_porcentaje" x1="39.98" y1="34.97" x2="75.03" y2="105.06" />
-            <line class="lineas_porcentaje" x1="42.48" y1="29.97" x2="80.03" y2="105.06" />
-            <line class="lineas_porcentaje" x1="44.99" y1="24.96" x2="85.04" y2="105.06" />
-            <line class="lineas_porcentaje" x1="47.49" y1="19.96" x2="90.04" y2="105.06" />
-            <line class="lineas_porcentaje" x1="49.99" y1="14.95" x2="95.05" y2="105.06" />
-            <line class="lineas_porcentaje" x1="52.5" y1="9.94" x2="100.06" y2="105.06" />
-            <line class="lineas_porcentaje" x1="102.56" y1="100.06" x2="100.06" y2="105.06" />
-            <line class="lineas_porcentaje" x1="100.06" y1="95.05" x2="95.05" y2="105.06" />
-            <line class="lineas_porcentaje" x1="97.55" y1="90.04" x2="90.04" y2="105.06" />
-            <line class="lineas_porcentaje" x1="95.05" y1="85.04" x2="85.04" y2="105.06" />
-            <line class="lineas_porcentaje" x1="92.55" y1="80.03" x2="80.03" y2="105.06" />
-            <line class="lineas_porcentaje" x1="90.04" y1="75.03" x2="75.03" y2="105.06" />
-            <line class="lineas_porcentaje" x1="87.54" y1="70.02" x2="70.02" y2="105.06" />
-            <line class="lineas_porcentaje" x1="85.04" y1="65.01" x2="65.01" y2="105.06" />
-            <line class="lineas_porcentaje" x1="82.53" y1="60.01" x2="60.01" y2="105.06" />
-            <line class="lineas_porcentaje" x1="55" y1="105.06" x2="80.03" y2="55" />
-            <line class="lineas_porcentaje" x1="77.53" y1="49.99" x2="49.99" y2="105.06" />
-            <line class="lineas_porcentaje" x1="75.03" y1="44.99" x2="44.99" y2="105.06" />
-            <line class="lineas_porcentaje" x1="72.52" y1="39.98" x2="39.98" y2="105.06" />
-            <line class="lineas_porcentaje" x1="70.02" y1="34.97" x2="34.97" y2="105.06" />
-            <line class="lineas_porcentaje" x1="67.52" y1="29.97" x2="29.97" y2="105.06" />
-            <line class="lineas_porcentaje" x1="65.01" y1="24.96" x2="24.96" y2="105.06" />
-            <line class="lineas_porcentaje" x1="62.51" y1="19.96" x2="19.96" y2="105.06" />
-            <line class="lineas_porcentaje" x1="60.01" y1="14.95" x2="14.95" y2="105.06" />
-            <line class="lineas_porcentaje" x1="57.5" y1="9.94" x2="9.94" y2="105.06" />
-            <line class="lineas_porcentaje" x1="7.44" y1="100.06" x2="102.56" y2="100.06" />
-            <line class="lineas_porcentaje" x1="9.94" y1="95.05" x2="100.06" y2="95.05" />
-            <line class="lineas_porcentaje" x1="12.45" y1="90.04" x2="97.55" y2="90.04" />
-            <line class="lineas_porcentaje" x1="14.95" y1="85.04" x2="95.05" y2="85.04" />
-            <line class="lineas_porcentaje" x1="17.45" y1="80.03" x2="92.55" y2="80.03" />
-            <line class="lineas_porcentaje" x1="19.96" y1="75.03" x2="90.04" y2="75.03" />
-            <line class="lineas_porcentaje" x1="22.46" y1="70.02" x2="87.54" y2="70.02" />
-            <line class="lineas_porcentaje" x1="24.96" y1="65.01" x2="85.04" y2="65.01" />
-            <line class="lineas_porcentaje" x1="27.47" y1="60.01" x2="82.53" y2="60.01" />
-            <line class="lineas_porcentaje" x1="29.97" y1="55" x2="80.03" y2="55" />
-            <line class="lineas_porcentaje" x1="32.47" y1="49.99" x2="77.53" y2="49.99" />
-            <line class="lineas_porcentaje" x1="34.97" y1="44.99" x2="75.03" y2="44.99" />
-            <line class="lineas_porcentaje" x1="37.48" y1="39.98" x2="72.52" y2="39.98" />
-            <line class="lineas_porcentaje" x1="39.98" y1="34.97" x2="70.02" y2="34.97" />
-            <line class="lineas_porcentaje" x1="42.48" y1="29.97" x2="67.52" y2="29.97" />
-            <line class="lineas_porcentaje" x1="44.99" y1="24.96" x2="65.01" y2="24.96" />
-            <line class="lineas_porcentaje" x1="47.49" y1="19.96" x2="62.51" y2="19.96" />
-            <line class="lineas_porcentaje" x1="49.99" y1="14.95" x2="60.01" y2="14.95" />
-            <line class="lineas_porcentaje" x1="52.5" y1="9.94" x2="57.5" y2="9.94" />
-
+        <svg id="svg" viewBox="0 0 110 110">
             <!--POLIGONOS QAP-->
             <polygon class="poligonos poligonos_QAP" points="60 15 50 15 55 5 60 15" />
             <polygon class="poligonos poligonos_QAP" points="49 45 43 85 23 85 39 45 49 45" />
@@ -215,54 +155,47 @@
         </svg>
     </div>
 
-    <!--LABELS-->
-    <label id="label_input1" class="labels"></label>
-    <label id="label_input2" class="labels"></label>
-    <label id="label_input3" class="labels"></label>
-
-    <label id="label_nombre_input1" class="labels"></label>
-    <label id="label_nombre_input2" class="labels"></label>
-    <label id="label_nombre_input3" class="labels"></label>
-
-    <label id="label_input1_normalizado" class="labels"></label>
-    <label id="label_input2_normalizado" class="labels"></label>
-    <label id="label_input3_normalizado" class="labels"></label>
-
     <!--INPUTS-->
-    <input oninput="general()" type="range" class="inputs" id="input1" min="0" max="100" value="0">
-    <input oninput="general()" type="range" class="inputs" id="input2" min="0" max="100" value="0">
-    <input oninput="general()" type="range" class="inputs" id="input3" min="0" max="100" value="0">
-
-
-    <!--NOMBRE ROCA-->
-    <h1 id="label_nombre_QAP" class="label_nombre"></h1>
-    <h1 id="label_nombre_QAPv" class="label_nombre"></h1>
-    <h1 id="label_nombre_GABRO_hbl" class="label_nombre"></h1>
-    <h1 id="label_nombre_GABRO_olv" class="label_nombre"></h1>
-    <h1 id="label_nombre_GABRO_px" class="label_nombre"></h1>
-    <h1 id="label_nombre_UM_hbl" class="label_nombre"></h1>
-    <h1 id="label_nombre_UM_px" class="label_nombre"></h1>
+    <div id="inputs">
+        <label id="mx1">Qz</label>
+        <div class="ins">
+            <label id="label_input1"></label>
+            <input oninput="general()" type="range" id="input1" min="0" max="100" value="0">
+            <label id="label_input1_normalizado"></label>
+        </div>
+        <label id="mx2">Fdk</label>
+        <div class="ins">
+            <label id="label_input2"></label>
+            <input oninput="general()" type="range" id="input2" min="0" max="100" value="0">
+            <label id="label_input2_normalizado"></label>
+        </div>
+        <label id="mx3">Plg</label>
+        <div class="ins">
+            <label id="label_input3"></label>
+            <input oninput="general()" type="range" id="input3" min="0" max="100" value="0">
+            <label id="label_input3_normalizado"></label>
+        </div>
+    </div>
 
     <!--Tipo de roca-->
-    <form id="lista">
-        <input onclick="poligonos(this.value)" type="radio" name="lista" id="QAP" value="QAP">
+    <div id="lista">
+        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="QAP" checked value="QAP">
         <label for="QAP">Intrusivas</label><br>
-        <input onclick="poligonos(this.value)" type="radio" name="lista" id="QAPv" value="QAPv">
+        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="QAPv" value="QAPv">
         <label for="QAPv">Extrusivas</label><br>
-        <input onclick="poligonos(this.value)" type="radio" name="lista" id="GABRO_hbl" value="GABRO_hbl">
+        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="GABRO_hbl" value="GABRO_hbl">
         <label for="GABRO_hbl">Gabros con hbl</label><br>
-        <input onclick="poligonos(this.value)" type="radio" name="lista" id="GABRO_olv" value="GABRO_olv">
+        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="GABRO_olv" value="GABRO_olv">
         <label for="GABRO_olv">Gabros con olv</label><br>
-        <input onclick="poligonos(this.value)" type="radio" name="lista" id="GABRO_px" value="GABRO_px">
+        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="GABRO_px" value="GABRO_px">
         <label for="GABRO_px">Gabronoritas</label><br>
-        <input onclick="poligonos(this.value)" type="radio" name="lista" id="UM_hbl" value="UM_hbl">
+        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="UM_hbl" value="UM_hbl">
         <label for="UM_hbl">UM con hbl</label><br>
-        <input onclick="poligonos(this.value)" type="radio" name="lista" id="UM_px" value="UM_px">
+        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="UM_px" value="UM_px">
         <label for="UM_px">UM sin hbl</label><br>
-    </form>
-
-    <!-- js -->
-    <script src='main.js'></script>
+    </div>
 </body>
+
+<script src='main.js'></script>
 
 </html>

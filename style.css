@@ -1,338 +1,66 @@
 body {
     background-color: #1E1E1E;
     color: white;
-    font-family: Segoe UI;
-    overflow: hidden;
-    margin: 0;
+    font-size: 16px;
+    display: grid;
+    grid-template-rows: repeat(4, fr);
+}
+
+body div {
+    background-color: teal;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.3em;
+    text-align: center;
+}
+
+#roca {
+    font-size: 20px;
+}
+
+#contenedor {
     padding: 0;
 }
 
-/*CLASES*/
-.bordes_triangulo {
-    stroke: white;
-    stroke-miterlimit: 10;
-    stroke-width: 0.1px;
-    stroke-linecap: round;
+#svg {
+    width: 100%;
+    height: 100%;
+}
+
+#inputs {
+    display: grid;
+    grid-template-rows: repeat(6, fr);
+    box-sizing: content-box;
+    align-items: center;
+}
+
+.ins {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+}
+
+label {
+    display: inline;
+}
+
+input {
+    display: inline;
+    box-sizing: content-box;
 }
 
 #lista {
-    border: 1px solid white;
-    padding: 5%;
-    border-radius: 10%;
-    background-color: #1E1E1E;
-    position: fixed;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-}
-
-[type="radio"] {
-    animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-}
-
-.lineas_porcentaje {
-    stroke: white;
-    stroke-miterlimit: 10;
-    stroke-width: 0.1px;
-    stroke-linecap: round;
-    fill: none;
-    opacity: 0;
-    animation: aparecer_opacity_05 0.5s ease-out forwards 1s;
-}
-
-.bordes_triangulo {
-    animation: recorrer 1s ease-out forwards;
-}
-
-.labels {
+    background-color: tomato;
+    opacity: 80%;
     position: absolute;
-}
-
-.poligonos {
-    display: none;
-}
-
-/*IDS*/
-
-#borde_izquierdo {
-    stroke-dasharray: 111.93756103515625px;
-    stroke-dashoffset: 111.93756103515625px;
-}
-
-#borde_inferior {
-    stroke-dasharray: 100.1199951171875px;
-    stroke-dashoffset: 100.1199951171875px;
-}
-
-#borde_derecho {
-    stroke-dasharray: 111.93756103515625px;
-    stroke-dashoffset: 111.93756103515625px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    margin: auto;
 }
 
 #punto {
-    fill: red;
-    display: none;
-}
-
-@media only screen and (min-width: 500px) {
-
-    /*CLASES ADAPTABLES*/
-    .inputs {
-        position: absolute;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-        width: 8%;
-        height: 2%;
-    }
-
-    /*IDS ADAPTABLES*/
-    #contenedor_svg {
-        position: absolute;
-        width: 35%;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 7%;
-    }
-
-    #input1 {
-        top: 7%;
-        left: 46%;
-    }
-
-    #input2 {
-        top: 80%;
-        left: 33%;
-    }
-
-    #input3 {
-        top: 80%;
-        left: 58%;
-    }
-
-    #label_input1 {
-        top: 6.5%;
-        right: 54.5%;
-    }
-
-    #label_input2 {
-        top: 79.5%;
-        right: 67.5%;
-    }
-
-    #label_input3 {
-        top: 79.5%;
-        right: 42.5%;
-    }
-
-    #label_input1_normalizado {
-        top: 6.5%;
-        left: 55%;
-    }
-
-    #label_input2_normalizado {
-        top: 79.5%;
-        left: 42%;
-    }
-
-    #label_input3_normalizado {
-        top: 79.5%;
-        left: 67%;
-    }
-
-    #label_nombre_input1 {
-        top: 3.5%;
-        right: 50%;
-        transform: translateX(+50%);
-    }
-
-    #label_nombre_input2 {
-        top: 82.5%;
-        right: 63%;
-        transform: translateX(+50%);
-    }
-
-    #label_nombre_input3 {
-        top: 82.5%;
-        right: 37.5%;
-        transform: translateX(+50%);
-    }
-
-    /*>QAP*/
-
-    #label_nombre_QAP {
-        position: absolute;
-        display: none;
-        top: 84%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /*>QAPv*/
-
-    #label_nombre_QAPv {
-        position: absolute;
-        display: none;
-        top: 84%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /*>GABRO_hbl*/
-
-    #label_nombre_GABRO_hbl {
-        position: absolute;
-        display: none;
-        top: 84%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /*>GABRO_olv*/
-
-    #label_nombre_GABRO_olv {
-        position: absolute;
-        display: none;
-        top: 84%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /*>GABRO_px*/
-
-    #label_nombre_GABRO_px {
-        position: absolute;
-        display: none;
-        top: 84%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /*>UM_hbl*/
-
-    #label_nombre_UM_hbl {
-        position: absolute;
-        display: none;
-        top: 84%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /*>UM_px*/
-
-    #label_nombre_UM_px {
-        position: absolute;
-        display: none;
-        top: 84%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media only screen and (max-width: 455px) {
-
-    /*CLASES ADAPTABLES*/
-    .inputs {
-        position: absolute;
-        opacity: 0;
-        animation: aparecer_opacity_1 0.5s ease-out forwards 1s;
-        width: 50%;
-        left: 52%;
-        transform: translateX(-50%);
-    }
-
-    .label_nombre {
-        position: absolute;
-        display: none;
-        text-align: center;
-        width: 100%;
-        top: 71%;
-        font-size: large;
-    }
-
-    /*IDS ADAPTABLES*/
-    #contenedor_svg {
-        position: absolute;
-        width: 100%;
-        top: 40%;
-        transform: translateY(-50%);
-    }
-
-    #input1 {
-        top: 80%;
-    }
-
-    #input2 {
-        top: 85%;
-    }
-
-    #input3 {
-        top: 90%;
-    }
-
-    #label_input1 {
-        top: 79.5%;
-        right: 75%;
-    }
-
-    #label_input2 {
-        top: 84.5%;
-        right: 75%;
-    }
-
-    #label_input3 {
-        top: 89.5%;
-        right: 75%;
-    }
-
-    #label_input1_normalizado {
-        top: 79.5%;
-        left: 80%;
-    }
-
-    #label_input2_normalizado {
-        top: 84.5%;
-        left: 80%;
-    }
-
-    #label_input3_normalizado {
-        top: 89.5%;
-        left: 80%;
-    }
-
-    #label_nombre_input1 {
-        top: 79.5%;
-        right: 90%;
-        transform: translateX(+50%);
-    }
-
-    #label_nombre_input2 {
-        top: 84.5%;
-        right: 90%;
-        transform: translateX(+50%);
-    }
-
-    #label_nombre_input3 {
-        top: 89.5%;
-        right: 90%;
-        transform: translateX(+50%);
-    }
-}
-
-/*KEYFRAMES AL CARGAR PAGINA*/
-@keyframes recorrer {
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes aparecer_opacity_05 {
-    to {
-        opacity: 0.3;
-    }
-}
-
-@keyframes aparecer_opacity_1 {
-    to {
-        opacity: 1;
-    }
+    visibility: hidden;
+    fill: tomato;
 }
