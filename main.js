@@ -92,9 +92,9 @@ function general() {
         label_input2.style.color = "white"
         label_input3.style.color = "white"
     } else {
-        label_input1.style.color = "salmon"
-        label_input2.style.color = "salmon"
-        label_input3.style.color = "salmon"
+        label_input1.style.color = "red"
+        label_input2.style.color = "red"
+        label_input3.style.color = "red"
     }
 
     //MOSTRAR PORCENTAJES NORMALIZADOS
