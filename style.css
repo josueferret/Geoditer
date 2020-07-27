@@ -5,16 +5,11 @@ body {
     display: grid;
     grid-template-rows: repeat(4, fr);
     overflow: hidden;
-}
-
-body div {
-    border-radius: 1em;
-    padding: 1em;
-    margin: 0.3em;
-    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #roca {
+    text-align: center;
     font-size: 16px;
 }
 
@@ -29,6 +24,8 @@ body div {
 }
 
 #inputs {
+    padding: 1em;
+    text-align: center;
     display: grid;
     grid-template-rows: repeat(6, fr);
     box-sizing: content-box;
@@ -36,22 +33,78 @@ body div {
 }
 
 .ins {
-    padding: 0;
+    padding: 0.5em;
     display: grid;
     grid-template-columns: 15% 70% 15%;
-}
-
-#lista {
-    background-color: teal;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: left;
-    margin: auto;
 }
 
 #punto {
     visibility: hidden;
     fill: tomato;
+}
+
+[type="range"] {
+    -webkit-appearance: none;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: rgb(56, 53, 53);
+    margin-top: 0.8em;
+}
+
+[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: teal;
+    border-radius: 50%;
+}
+
+#lista {
+    background-color: #1a1919;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    text-align: left;
+    padding-left: 3em;
+    padding-top: 3.2em;
+    top: 7%;
+    left: 10%;
+}
+
+#lista span {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid teal;
+    position: absolute;
+    left: 1.5em;
+    transform: translateY(-1px);
+    background-color: transparent;
+}
+
+#lista input[type="radio"]:checked~span {
+    background-color: teal;
+}
+
+.ops {
+    padding: 0.3em;
+}
+
+[type="radio"] {
+    display: none;
+}
+
+#boton {
+    position: absolute;
+    text-align: center;
+    padding: 1em;
+    width: 9.25em;
+    top: 7%;
+    left: 10%;
+    background-color: #1a1919;
+    border-radius: 1em;
+    cursor: context-menu;
 }

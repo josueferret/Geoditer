@@ -15,7 +15,7 @@
         <label id="roca">&nbsp;</label>
     </div>
 
-    <div id="contenedor" onclick="lista()">
+    <div id="contenedor">
 
         <svg id="svg" viewBox="0 0 110 110">
             <!--POLIGONOS QAP-->
@@ -159,41 +159,69 @@
     <div id="inputs">
         <label id="mx1">Qz</label>
         <div class="ins">
-            <label id="label_input1"></label>
+            <label id="label_input1">&nbsp;</label>
             <input oninput="general()" type="range" id="input1" min="0" max="100" value="0">
-            <label id="label_input1_normalizado"></label>
+            <label id="label_input1_normalizado">&nbsp;</label>
         </div>
         <label id="mx2">Fdk</label>
         <div class="ins">
-            <label id="label_input2"></label>
+            <label id="label_input2">&nbsp;</label>
             <input oninput="general()" type="range" id="input2" min="0" max="100" value="0">
-            <label id="label_input2_normalizado"></label>
+            <label id="label_input2_normalizado">&nbsp;</label>
         </div>
         <label id="mx3">Plg</label>
         <div class="ins">
-            <label id="label_input3"></label>
+            <label id="label_input3">&nbsp;</label>
             <input oninput="general()" type="range" id="input3" min="0" max="100" value="0">
-            <label id="label_input3_normalizado"></label>
+            <label id="label_input3_normalizado">&nbsp;</label>
         </div>
     </div>
 
     <!--Tipo de roca-->
     <div id="lista">
-        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="QAP" checked value="QAP">
-        <label for="QAP">Intrusivas</label><br>
-        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="QAPv" value="QAPv">
-        <label for="QAPv">Extrusivas</label><br>
-        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="GABRO_hbl" value="GABRO_hbl">
-        <label for="GABRO_hbl">Gabros con hbl</label><br>
-        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="GABRO_olv" value="GABRO_olv">
-        <label for="GABRO_olv">Gabros con olv</label><br>
-        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="GABRO_px" value="GABRO_px">
-        <label for="GABRO_px">Gabronoritas</label><br>
-        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="UM_hbl" value="UM_hbl">
-        <label for="UM_hbl">UM con hbl</label><br>
-        <input onclick="poligonos(this.value), general()" type="radio" name="lista" id="UM_px" value="UM_px">
-        <label for="UM_px">UM sin hbl</label><br>
+        <div class="ops">
+            <input onclick="poligonos(this.value), general(), lista()" type="radio" name="lista" id="QAP" checked
+                value="QAP">
+            <label for="QAP">Intrusivas</label>
+            <span></span>
+        </div>
+        <div class="ops">
+            <input onclick="poligonos(this.value), general(), lista()" type="radio" name="lista" id="QAPv" value="QAPv">
+            <label for="QAPv">Extrusivas</label>
+            <span></span>
+        </div>
+        <div class="ops">
+            <input onclick="poligonos(this.value), general(), lista()" type="radio" name="lista" id="GABRO_hbl"
+                value="GABRO_hbl">
+            <label for="GABRO_hbl">Gabros con hbl</label>
+            <span></span>
+        </div>
+        <div class="ops">
+            <input onclick="poligonos(this.value), general(), lista()" type="radio" name="lista" id="GABRO_olv"
+                value="GABRO_olv">
+            <label for="GABRO_olv">Gabros con olv</label>
+            <span></span>
+        </div>
+        <div class="ops">
+            <input onclick="poligonos(this.value), general(), lista()" type="radio" name="lista" id="GABRO_px"
+                value="GABRO_px">
+            <label for="GABRO_px">Gabronoritas</label>
+            <span></span>
+        </div>
+        <div class="ops">
+            <input onclick="poligonos(this.value), general(), lista()" type="radio" name="lista" id="UM_hbl"
+                value="UM_hbl">
+            <label for="UM_hbl">UM con hbl</label>
+            <span></span>
+        </div>
+        <div class="ops">
+            <input onclick="poligonos(this.value), general(), lista()" type="radio" name="lista" id="UM_px"
+                value="UM_px">
+            <label for="UM_px">UM sin hbl</label>
+            <span></span>
+        </div>
     </div>
+    <div onclick="lista()" id="boton">Cambiar triángulo</div>
 </body>
 
 <script src='main.js'></script>
